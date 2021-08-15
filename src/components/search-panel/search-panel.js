@@ -1,10 +1,12 @@
 import React from 'react'
+import s from './search-panel.module.css';
+import cx from 'classnames';
 
 const SearchPanel = () => {
     return (
-        <div>
+        <div className={s.searchPanel}>
             <input
-                className="form-control search-input"
+                className={cx("form-control", s.searchInput)}
                 type="text"
                 placeholder="Search..."
             />
