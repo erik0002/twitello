@@ -2,6 +2,7 @@ import React from 'react';
 import s from './post-list.module.scss';
 import PostListItem from '../post-list-item/post-list-item';
 import cx from 'classnames';
+import { ListGroup } from 'reactstrap';
 
 const PostList = ({posts}) => {
 
@@ -15,11 +16,9 @@ const PostList = ({posts}) => {
     })
 
     return (
-        <div>
-            <ul className={cx(s.appList, s.listGroupItem, 'list-group')}>
+            <ListGroup className={cx(s.appList)}>
                 {elements}
-            </ul>
-        </div>
+            </ListGroup>
     )
 }
 

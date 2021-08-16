@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import s from './post-list-item.module.css';
+import s from './post-list-item.module.scss';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import {faHeart, faStar, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import "@fortawesome/fontawesome-free/css/all.css"
 
-export default class PostListItem extends React.Component {
+export default class PostListItem extends Component {
 
     constructor(props) {
         super(props);
