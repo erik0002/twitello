@@ -6,32 +6,11 @@ import "@fortawesome/fontawesome-free/css/all.css"
 
 export default class PostListItem extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            important: false,
-            like: false
-        };
-        this.onImportant = this.onImportant.bind(this)
-        this.onLiked = this.onLiked.bind(this)
-    }
 
-    onImportant() {
-        this.setState(({important}) => ({
-            important: !important
-        }))
-    }
-
-    onLiked() {
-        this.setState(({like}) => ({
-            like: !like
-        }))
-    }
 
     render () {
 
-        const {label} = this.props;
-        const {important, like} = this.state;
+        const {label, onDelete, onToggleLiked, onToggleImportant, important, like} = this.props;
 
         let classNames = `${s.appListItem} d-flex justify-content-between`;
 
@@ -54,20 +33,21 @@ export default class PostListItem extends Component {
                     <button
                         type="button"
                         className={`${s.btnStar} btn-sm`}
-                        onClick={this.onImportant}
+                        onClick={onToggleImportant}
                     >
                         <i className="fa fa-star"/>
                     </button>
                     <button
                         type="button"
                         className={`${s.btnTrash} btn-sm`}
+                        onClick={onDelete}
                     >
                         <i className="fa fa-trash-alt"/>
                     </button>
                     <button
                         type="button"
                         className={`${s.faHeart} btn-sm`}
-                        onClick={this.onLiked}
+                        onClick={onToggleLiked}
                     >
                         <i className="fa fa-heart"/>
                     </button>
